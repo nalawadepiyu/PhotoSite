@@ -1,0 +1,35 @@
+<h1>Photos</h1>
+
+<% @photos.each do |photo| %>
+    <table>
+      <tr>
+        <td>
+
+          <img src="<%=asset_path(photo.file_name) %>" />
+        </td>
+        <td>
+          <%= photo.created_at %>
+        </td>
+        <% com =  @comment.where(:photo_id => photo.id) %>
+        <% com.each do |comment| %>
+            <%= comment.comment_text %>
+        <% end %>
+      </tr>
+    </table>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
