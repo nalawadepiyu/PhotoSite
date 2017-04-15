@@ -9,14 +9,10 @@
         </td>
         <td>
           <%= photo.created_at %>
+          <%= link_to 'Comments', get_comments_path(photo.id) %>
         </td>
-        <% com =  @comment.where(:photo_id => photo.id) %>
-        <% com.each do |comment| %>
-            <%= comment.comment_text %>
-        <% end %>
       </tr>
     </table>
-
 <% end %>
 
 

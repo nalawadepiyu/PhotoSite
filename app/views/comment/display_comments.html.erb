@@ -1,0 +1,9 @@
+<h1>Comments</h1>
+
+<% @comments.each do |comment| %>
+    <table>
+      <tr> <%= comment.comment_text %></tr>
+      <tr> <%= comment.date_time %> </tr>
+      <tr> <%= link_to comment.user.first_name  , photo_path(comment.user_id) %> </tr>
+    </table>
+<% end %>
